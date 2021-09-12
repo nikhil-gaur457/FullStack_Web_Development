@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - 9</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        html {
+            scroll-padding-top: 70px;
+            scroll-behavior: smooth;
+        }
+        #container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /*Header*/
+        #header {
+            margin: auto 10px;
+            background-color: #595260;
+            height: 60px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+        .menu{
+            list-style: none;
+            float: right;
+            padding: 0 20px;
+        }
+        .menu li {
+            display: inline-block;
+            line-height: 70px;
+        }
+
+        #header a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            line-height: 60px;
+        }
+
+        #header a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        #banner {
+            margin: 10px;
+            height: 100vh;
+            background-image: url(../Images/laptop\ background.jpg);
+            background-size: cover;
+            background-position: center;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        #banner h1 {
+            color: white;
+            font-size: 60px;
+        }
+
+        /*Team Members*/
+        #team h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 8px;
+        }
+
+        .avatar img {
+            width: 100%;
+        }
+
+        #avatar2 {
+            background-color: #ff4155;
+        }
+
+        #avatar4 {
+            background-color: #afe6ff;
+        }
+
+        #avatars {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /*About us*/
+        #about {
+            margin: 20px 10px;
+        }
+
+        #about h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #container {
+            display: flex;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        #about-project {
+            width: 50%;
+            background-color: #343a40;
+            padding: 0 10px 0 10px;
+            height: 410px;
+            color: white;
+            margin-right: 10px;
+        }
+
+        #about-project h1 {
+            text-align: left;
+        }
+
+        .projects {
+            width: 50%;
+            height: 410px;
+        }
+
+        .project {
+            height: 130px;
+            background-color: #f55c47;
+        }
+
+        #project1 {
+            background: url(../Images/project1.png);
+            background-repeat: no-repeat;
+            background-size: 100% 130px;
+        }
+
+        #project2 {
+            background: url(../Images/project2.png);
+            background-repeat: no-repeat;
+            background-size: 100% 130px;
+        }
+
+        #project3 {
+            background: url(../Images/project3.png);
+            background-repeat: no-repeat;
+            background-size: 100% 130px;
+        }
+
+        .project h1 {
+            text-align: center;
+            color: black;
+        }
+
+        #project1,
+        #project2 {
+            margin-bottom: 10px;
+        }
+
+        /*Techonology*/
+        #technologies {
+            margin: 20px 10px;
+        }
+
+        #technologies h1 {
+            text-align: center;
+        }
+
+        .box-container {
+            width: 100%;
+            display: inline-flex;
+        }
+
+        .box {
+            width: 23%;
+            border: 1px solid black;
+            background-color: white;
+            padding: 15px;
+            margin: 20px 15px;
+            border-radius: 12px;
+            display: grid;
+            overflow: hidden;
+        }
+
+        .image-box {
+            display: flex;
+            justify-content: center;
+            box-shadow: 2px 2px 10px rgb(53, 51, 51);
+            margin-bottom: 10px;
+            border-radius: 12px;
+            height: 142px;
+        }
+
+        .image-box img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .box h3 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .box p {
+            overflow: hidden;
+        }
+
+        .button a {
+            text-decoration: none;
+            background-color: #45d0e6;
+            display: block;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 10px auto;
+        }
+
+        .button a:hover {
+            background-color: #df2e2e;
+        }
+
+        #contact {
+            margin: 20px 10px;
+            text-align: center;
+        }
+
+        #footer {
+            background-color: #5eaaa8;
+            margin: 20px 10px 0;
+            height: 60px;
+            text-align: center;
+            padding-top: 25px;
+        }
+
+        #footer p {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <a href="#">Home</a>
+        <a href="#about">About us</a>
+        <a href="#team">team</a>
+        <a href="#technologies">Technologies</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div id="banner">
+        <h1>PRACTICAL - 9</h1>
+    </div>
+
+
+    <div id="team">
+        <h1>Team</h1>
+        <div id="avatars">
+            <div class="avatar" id="avatar1">
+                <img src="../Images/avatar1.png" alt="avatar1" />
+            </div>
+            <div class="avatar" id="avatar2">
+                <img src="../Images/avatar2.png" alt="avatar2" />
+            </div>
+            <div class="avatar" id="avatar3">
+                <img src="../Images/avatar3.png" alt="avatar3" />
+            </div>
+            <div class="avatar" id="avatar4">
+                <img src="../Images/avatar4.png" alt="avatar4" />
+            </div>
+        </div>
+    </div>
+
+
+    <div id="about">
+        <h1>About Us</h1>
+        <div id="container">
+            <div id="about-project">
+                <h1>About Projects</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis excepturi veniam unde distinctio
+                    commodi impedit, dolore maiores iusto quae velit illo! Quas temporibus ipsa unde facilis, eius,
+                    similique quisquam qui quibusdam ut ratione soluta commodi vero saepe voluptas eaque velit
+                    consequatur aspernatur perferendis dolores reprehenderit atque quos consequuntur? Quos repudiandae
+                    modi necessitatibus, vitae dolorum excepturi minus illo omnis nam distinctio vel nisi soluta ad
+                    voluptatum optio laboriosam delectus saepe hic. Iure error accusantium aliquam blanditiis aspernatur
+                    natus doloremque in quo corrupti voluptatum eius repudiandae magni provident, esse saepe ipsam?
+                    Repellendus quisquam soluta perspiciatis, suscipit odit accusamus architecto quos rem perferendis.
+                </p>
+            </div>
+
+            <div class="projects">
+                <div class="project" id="project1">
+                    <h1>Project - 1</h1>
+                </div>
+                <div class="project" id="project2">
+                    <h1>Project - 2</h1>
+                </div>
+                <div class="project" id="project3">
+                    <h1>Project - 3</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="technologies">
+        <h1>Technologies Used</h1>
+        <div class="box-container">
+            <div class="box">
+                <div class="image-box">
+                    <img src="./Assignment-5/MongoDB.jpg" alt="Mongo-DB" />
+                </div>
+                <div class="heading">
+                    <h3>Introduction to Mongo-DB</h3>
+                </div>
+                <p>MongoDB is a source-available cross-platform document-oriented database program. Classified as a
+                    NoSQL database program, MongoDB uses JSON-like documents with optional schemas.</p>
+                <div class="button">
+                    <a href="./Assignment-5/Mongo.html" target="_blank">Read More</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image-box">
+                    <img src="./Assignment-5/Express.png" alt="Express JS" />
+                </div>
+                <h3>Introduction to Express JS</h3>
+                <p>Express.js, or simply Express, is a back end web application framework for Node.js, released as
+                    free and open-source software under the MIT License.</p>
+                <div class="button">
+                    <a href="./Assignment-5/Express.html" target="_blank">Read More</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image-box">
+                    <img src="./Assignment-5/react.jpg" alt="React JS" />
+                </div>
+                <h3>Introduction to React JS</h3>
+                <p>React is a free and open-source front-end JavaScript library for building user interfaces or UI
+                    components. It is maintained by Facebook and a community of individual developers and companies.</p>
+                <div class="button">
+                    <a href="./Assignment-5/React.html" target="_blank">Read More</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image-box">
+                    <img src="./Assignment-5/Node js.jpeg" alt="Node JS" />
+                </div>
+                <h3>Introduction to Node JS</h3>
+                <p>Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on
+                    the V8 engine and executes JavaScript code outside a web browser. </p>
+                <div class="button">
+                    <a href="./Assignment-5/NodeJS.html" target="_blank">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="contact">
+        <h1>Contact</h1>
+    </div>
+    <div id="footer">
+        <p>Website template for practical - 8 &#169;
+            <a href="https://github.com/nikhil-gaur457" target="_blank">Nikhil Gaur</a>
+        </p>
+        <p><a href="#">Back to top</a></p>
+    </div>
+
+</body>
+
+</html>
