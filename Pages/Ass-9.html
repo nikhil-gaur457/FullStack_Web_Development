@@ -5,382 +5,1024 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment - 9</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Practical-9</title>
+
     <style>
+        /* Reset all Margins & Padding */
         * {
-            margin: 0;
             padding: 0;
+            margin: 0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
         }
+
+        /* 
+      --Resolve Position Fixed Issue-- 
+                      & 
+        ----------Smooth Scroll ------ 
+      */
+
         html {
             scroll-padding-top: 70px;
             scroll-behavior: smooth;
         }
+
         #container {
             width: 100%;
             max-width: 1200px;
             margin: auto;
         }
 
-        /*Header*/
+        /* ------Header Container-------- */
+
         #header {
-            margin: auto 10px;
-            background-color: #595260;
-            height: 60px;
-            text-align: center;
-            position: sticky;
+            background-color: grey;
+            width: 100%;
+            height: 70px;
+            max-width: 1200px;
+            position: fixed;
             top: 0;
+            height: 70px;
         }
-        .menu{
+
+        /* Navigation Menu  */
+        .menu {
             list-style: none;
             float: right;
             padding: 0 20px;
         }
+
         .menu li {
             display: inline-block;
             line-height: 70px;
         }
 
-        #header a {
-            text-transform: uppercase;
+        .menu li a {
+            transition: 0.4s;
+            display: block;
             text-decoration: none;
             color: white;
-            text-align: center;
-            padding: 22px;
-            line-height: 60px;
+            padding: 0px 20px;
+            font-size: 20px;
+            text-transform: uppercase;
         }
 
-        #header a:hover {
-            background-color: white;
+        .menu li a:hover {
             color: black;
+            background-color: white;
+        }
+
+        .show-btn,
+        .hide-btn,
+        #chk {
+            font-size: 30px;
+            line-height: 70px;
+            color: white;
+            display: none;
+            float: right;
+            padding-right: 20px;
+        }
+
+        /* ------------------Banner ------------- */
+
+        #banner {
+            width: 100%;
+            margin-top: 90px;
+            height: 680px;
+            margin-bottom: 15px;
+            display: flex;
+            font-size: 40px;
+            color: white;
         }
 
         #banner {
-            margin: 10px;
-            height: 100vh;
             background-image: url(../Images/laptop\ background.jpg);
             background-size: cover;
             background-position: center;
-            padding: 25px;
-            margin-bottom: 30px;
         }
 
-        #banner h1 {
-            color: white;
-            font-size: 60px;
+        #banner h2 {
+            margin: 20px 20px;
+            color: #fff;
         }
 
-        /*Team Members*/
-        #team h1 {
-            text-align: center;
-            margin-bottom: 20px;
+        /* ------- Team Members ----- */
+
+        #circle-container {
+            width: 100%;
+            margin: 15px auto;
         }
 
-        .avatar {
-            height: 200px;
-            width: 200px;
-            border: 1px solid black;
+        #circle-container::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .circle img {
+            height: 250px;
+            width: 250px;
             border-radius: 50%;
-            display: inline-block;
-            margin: 8px;
-        }
-
-        .avatar img {
-            width: 100%;
-        }
-
-        #avatar2 {
-            background-color: #ff4155;
-        }
-
-        #avatar4 {
-            background-color: #afe6ff;
-        }
-
-        #avatars {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        /*About us*/
-        #about {
-            margin: 20px 10px;
-        }
-
-        #about h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        #container {
-            display: flex;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        #about-project {
-            width: 50%;
-            background-color: #343a40;
-            padding: 0 10px 0 10px;
-            height: 410px;
-            color: white;
-            margin-right: 10px;
-        }
-
-        #about-project h1 {
-            text-align: left;
-        }
-
-        .projects {
-            width: 50%;
-            height: 410px;
-        }
-
-        .project {
-            height: 130px;
-            background-color: #f55c47;
-        }
-
-        #project1 {
-            background: url(../Images/project1.png);
-            background-repeat: no-repeat;
-            background-size: 100% 130px;
-        }
-
-        #project2 {
-            background: url(../Images/project2.png);
-            background-repeat: no-repeat;
-            background-size: 100% 130px;
-        }
-
-        #project3 {
-            background: url(../Images/project3.png);
-            background-repeat: no-repeat;
-            background-size: 100% 130px;
-        }
-
-        .project h1 {
-            text-align: center;
-            color: black;
-        }
-
-        #project1,
-        #project2 {
-            margin-bottom: 10px;
-        }
-
-        /*Techonology*/
-        #technologies {
-            margin: 20px 10px;
-        }
-
-        #technologies h1 {
-            text-align: center;
-        }
-
-        .box-container {
-            width: 100%;
-            display: inline-flex;
-        }
-
-        .box {
-            width: 23%;
-            border: 1px solid black;
-            background-color: white;
-            padding: 15px;
-            margin: 20px 15px;
-            border-radius: 12px;
-            display: grid;
-            overflow: hidden;
-        }
-
-        .image-box {
+            background-color: goldenrod;
+            float: left;
+            margin-left: 40px;
             display: flex;
             justify-content: center;
-            box-shadow: 2px 2px 10px rgb(53, 51, 51);
-            margin-bottom: 10px;
-            border-radius: 12px;
-            height: 142px;
+            align-items: center;
+            font-size: 30px;
         }
 
-        .image-box img {
-            width: 100%;
-            border-radius: 12px;
+        /* -------------About Us-------------- */
+        #sec2-container::after {
+            content: '';
+            display: block;
+            clear: both;
         }
 
-        .box h3 {
-            text-align: center;
-            margin-bottom: 10px;
+        #left-side {
+            width: 50%;
+            height: 550px;
+            background-color: gray;
+            float: left;
+            color: #fff;
         }
 
-        .box p {
+        #left-p>h2 {
+            text-align: left;
+            margin: 10px 5px;
+        }
+
+        #left-p>p {
+            font-size: 20px;
+            padding: 10px;
+            text-align: justify;
+            line-height: 28px;
+        }
+
+        #right-side {
+            width: 48%;
+            height: 550px;
+            float: right;
+        }
+
+        .artical {
+            height: 31%;
+            margin-bottom: 20px;
+            background-color: chocolate;
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
             overflow: hidden;
         }
 
-        .button a {
-            text-decoration: none;
-            background-color: #45d0e6;
+        #p1 {
+            background-image: url(../Images/project1.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #p2 {
+            background-image: url(../Images/project2.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #p3 {
+            background-image: url(../Images/project3.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* --------- Technologies Used------------ */
+        #grid-container {
+            width: 100%;
+            margin: 15px auto;
+        }
+
+        #grid-container::after {
+            content: '';
             display: block;
-            padding: 10px 20px;
+            clear: both;
+        }
+
+        .grid {
+            width: 20%;
+            float: left;
+            margin-left: 50px;
+            background-color: lightgrey;
+            border-radius: 8px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .grid>img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .grid>h4 {
+            margin: 0px 10px;
             text-align: center;
-            border-radius: 12px;
-            margin: 10px auto;
         }
 
-        .button a:hover {
-            background-color: #df2e2e;
-        }
-
-        #contact {
-            margin: 20px 10px;
-            text-align: center;
-        }
-
-        #footer {
-            background-color: #5eaaa8;
-            margin: 20px 10px 0;
-            height: 60px;
-            text-align: center;
-            padding-top: 25px;
-        }
-
-        #footer p {
+        .grid>p {
+            margin: 10px;
+            font-size: 15px;
+            text-align: justify;
+            line-height: 25px;
             color: white;
+        }
+
+        .grid>a {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            color: #fff;
+            background-color: red;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: black;
+            font-size: 40px;
+            text-align: center;
+            padding: 25px 0px;
+        }
+
+        .grid>a:hover {
+            background-color: blue;
+        }
+
+        /* -------Footer Section ------- */
+        #footer {
+            background-color: plum;
+            height: 100px;
+        }
+
+        #footer>p {
+            font-size: 16px;
+            color: black;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* 1. First Break-point */
+        /* 801px - 1199px */
+
+        @media (min-width: 801px) and (max-width: 1199px) {
+            .menu {
+                list-style: none;
+                float: right;
+            }
+
+            .menu li {
+                line-height: 70px;
+                display: inline-block;
+            }
+
+            .menu li a {
+                display: block;
+                text-decoration: none;
+                color: white;
+                padding: 0px 20px;
+                font-size: 20px;
+                text-transform: uppercase;
+            }
+
+            .menu li a:hover {
+                color: black;
+                background-color: white;
+            }
+
+            html {
+                scroll-padding-top: 70px;
+                scroll-behavior: smooth;
+            }
+
+            #container {
+                width: 100%;
+            }
+
+            .show-btn,
+            .hide-btn,
+            #chk {
+                font-size: 30px;
+                line-height: 70px;
+                color: white;
+                display: none;
+                float: right;
+                padding-right: 20px;
+            }
+
+            /* ------Header Container-------- */
+
+            #header {
+                width: 100%;
+                background-color: grey;
+                position: fixed;
+                top: 0;
+                height: 70px;
+            }
+
+            /* ------------------Banner ------------- */
+
+            #banner {
+                width: 100%;
+                margin-top: 90px;
+                height: 680px;
+                margin-bottom: 15px;
+                display: flex;
+                font-size: 40px;
+                color: white;
+            }
+
+            #banner {
+                background-image: url(../Images/laptop\ background.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+
+            #banner h2 {
+                margin: 20px 20px;
+                color: #fff;
+            }
+
+            /* ------- Team Members ----- */
+
+            #circle-container {
+                width: 100%;
+            }
+
+            #circle-container::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .circle img {
+                height: 250px;
+                width: 250px;
+                border-radius: 50%;
+                background-color: goldenrod;
+                float: left;
+                margin-left: 15%;
+                margin-bottom: 20px;
+            }
+
+            /* -------------About Us-------------- */
+
+            #sec2-container::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            #left-side {
+                width: 50%;
+                height: 550px;
+                background-color: gray;
+                float: left;
+                color: #fff;
+            }
+
+            #left-p>h2 {
+                text-align: left;
+                margin: 10px 5px;
+            }
+
+            #left-p>p {
+                font-size: 20px;
+                padding: 10px;
+                text-align: justify;
+                line-height: 28px;
+            }
+
+            #right-side {
+                width: 48%;
+                height: 550px;
+                float: right;
+            }
+
+            .artical {
+                height: 31%;
+                margin-bottom: 20px;
+                background-color: chocolate;
+                display: flex;
+                justify-content: center;
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+                overflow: hidden;
+            }
+
+            #p1 {
+                background-image: url(../Images/project1.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #p2 {
+                background-image: url(../Images/project2.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #p3 {
+                background-image: url(../Images/project3.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            /* --------- Technologies Used------------ */
+            #grid-container {
+                width: 100%;
+                margin: 15px auto;
+            }
+
+            #grid-container::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .grid {
+                width: 40%;
+                float: left;
+                margin-left: 65px;
+                margin-bottom: 20px;
+                background-color: lightgrey;
+                border-radius: 8px;
+                box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+            }
+
+            .grid>img {
+                width: 100%;
+                margin-bottom: 10px;
+                padding: 20px;
+            }
+
+            .grid>h4 {
+                margin: 0px 10px;
+                text-align: center;
+            }
+
+            .grid>p {
+                margin: 10px;
+                font-size: 20px;
+                text-align: justify;
+                line-height: 30px;
+                color: white;
+            }
+
+            .grid>a {
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+                color: #fff;
+                background-color: red;
+                text-decoration: none;
+                padding: 10px;
+                border-radius: 8px;
+            }
+
+            h1 {
+                color: black;
+                font-size: 40px;
+                text-align: center;
+                padding: 25px 0px;
+            }
+
+            .grid>a:hover {
+                background-color: blue;
+            }
+
+            /* -------Footer Section ------- */
+            #footer {
+                background-color: plum;
+                height: 100px;
+            }
+
+            #footer>p {
+                font-size: 16px;
+                color: black;
+                text-align: center;
+                padding: 20px;
+            }
+        }
+
+        /* 2. Second Break-point */
+
+        @media (max-width: 800px) {
+            #header {
+                width: 100%;
+                background-color: grey;
+                position: fixed;
+                top: 0;
+                height: 70px;
+            }
+
+            .show-btn {
+                display: block;
+            }
+
+            .menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+                padding: 80px 0px;
+                line-height: normal;
+                transition: 0.7s;
+            }
+
+            .menu li {
+                display: block;
+            }
+
+            .manu li a {
+                display: block;
+            }
+
+            #chk:checked~.menu {
+                right: 0;
+            }
+
+            .hide-btn {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 10px;
+            }
+
+            #banner {
+                width: 100%;
+                height: 350px;
+                margin-bottom: 15px;
+                display: flex;
+                font-size: 30px;
+                color: white;
+                margin-top: 90px;
+            }
+
+            #banner h2 {
+                margin: 10px 20px;
+                color: #fff;
+            }
+
+            #circle-container {
+                width: 100%;
+            }
+
+            #circle-container::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .circle img {
+                height: 250px;
+                width: 250px;
+                border-radius: 50%;
+                float: left;
+                margin-left: 10%;
+                margin-bottom: 20px;
+            }
+
+            #left-side {
+                width: 100%;
+                height: 200px;
+                background-color: gray;
+                color: #fff;
+                margin-bottom: 20px;
+            }
+
+            #left-p>h2 {
+                text-align: left;
+                margin: 5px 5px;
+            }
+
+            #left-p>p {
+                font-size: 20px;
+                padding: 10px;
+                text-align: justify;
+                line-height: 28px;
+            }
+
+            #right-side {
+                width: 100%;
+                height: 400px;
+            }
+
+            .artical {
+                height: 31%;
+                margin-bottom: 20px;
+                background-color: chocolate;
+                display: flex;
+                justify-content: center;
+                font-size: 16px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+                overflow: hidden;
+            }
+
+            #p1 {
+                background-image: url(../Images/project1.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #p2 {
+                background-image: url(../Images/project2.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #p3 {
+                background-image: url(../Images/project3.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #grid-container {
+                width: 100%;
+                margin: 15px auto;
+            }
+
+            #grid-container::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .grid {
+                width: 40%;
+                float: left;
+                margin-left: 50px;
+                background-color: lightgrey;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+            }
+
+            .grid>img {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .grid>h4 {
+                margin: 0px 10px;
+                text-align: center;
+            }
+
+            .grid>p {
+                margin: 10px;
+                font-size: 15px;
+                text-align: justify;
+                line-height: 25px;
+                color: white;
+            }
+
+            .grid>a {
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+                color: #fff;
+                background-color: red;
+                text-decoration: none;
+                padding: 10px;
+                border-radius: 8px;
+            }
+
+            h1 {
+                color: black;
+                font-size: 40px;
+                text-align: center;
+                padding: 25px 0px;
+            }
+
+            /* 3. Third Break-point */
+
+            @media (max-width: 625px) {
+                /* Set container to min-width of 320px */
+
+                #container {
+                    min-width: 320px;
+                }
+
+                .show-btn {
+                    display: block;
+                }
+
+                .menu {
+                    position: fixed;
+                    top: 0;
+                    right: -100%;
+                    width: 100%;
+                    background-color: #333;
+                    text-align: center;
+                    padding: 80px 0px;
+                    line-height: normal;
+                    transition: 0.7s;
+                }
+
+                .menu li {
+                    display: block;
+                }
+
+                .manu li a {
+                    display: block;
+                }
+
+                #chk:checked~.menu {
+                    right: 0;
+                }
+
+                .hide-btn {
+                    display: block;
+                    position: absolute;
+                    right: 20px;
+                    top: 10px;
+                }
+
+                #banner {
+                    width: 100%;
+                    height: 250px;
+                    margin-bottom: 15px;
+                    color: white;
+                    margin-top: 90px;
+                }
+
+                #banner h2 {
+                    margin: 10px 20px;
+                    color: #fff;
+                    font-size: 20px;
+                }
+
+                #circle-container {
+                    width: 90%;
+                    margin-left: 10%;
+                }
+
+                .circle img {
+                    height: 70%;
+                    width: 70%;
+
+                    border-radius: 50%;
+                    margin-bottom: 20px;
+                }
+
+                #left-side {
+                    width: 100%;
+                    height: 200px;
+                    background-color: gray;
+                    color: #fff;
+                    margin-bottom: 20px;
+                }
+
+                #left-p>h2 {
+                    text-align: left;
+                    margin: 5px 5px;
+                }
+
+                #left-p>p {
+                    font-size: 20px;
+                    padding: 10px;
+                    text-align: justify;
+                    line-height: 28px;
+                }
+
+                #right-side {
+                    width: 100%;
+                    height: 400px;
+                }
+
+                .artical {
+                    box-sizing: border-box;
+                    height: 31%;
+                    margin-bottom: 20px;
+                    display: flex;
+                    justify-content: center;
+                    font-size: 16px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: black;
+                    overflow: hidden;
+                }
+
+                #p1 {
+                    background-image: url(../Images/project1.png);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+
+                #p2 {
+                    background-image: url(../Images/project2.png);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+
+                #p3 {
+                    background-image: url(../Images/project3.png);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+
+                #grid-container {
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+
+                .grid {
+                    margin-left: 20px;
+                    width: 90%;
+                    background-color: lightgrey;
+                    border-radius: 8px;
+                    margin-bottom: 20px;
+                    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+                    max-height: 500px;
+                }
+
+                .grid>img {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    padding: 20px;
+                }
+
+                .grid>h4 {
+                    margin: 0px 10px;
+                    text-align: center;
+                }
+
+                .grid>p {
+                    margin: 10px;
+                    font-size: 15px;
+                    text-align: justify;
+                    line-height: 25px;
+                    color: white;
+                }
+
+                .grid>a {
+                    display: block;
+                    margin: 0 auto;
+                    text-align: center;
+                    color: #fff;
+                    background-color: red;
+                    text-decoration: none;
+                    padding: 10px;
+                    border-radius: 8px;
+                }
+
+                h1 {
+                    color: black;
+                    font-size: 20px;
+                    text-align: center;
+                    padding-top: 25px;
+                    padding-bottom: 15px;
+                }
+            }
         }
     </style>
 </head>
 
 <body>
-    <div id="header">
-        <a href="#">Home</a>
-        <a href="#about">About us</a>
-        <a href="#team">team</a>
-        <a href="#technologies">Technologies</a>
-        <a href="#contact">Contact</a>
-    </div>
+    <div id="container">
+        <div id="header">
+            <input type="checkbox" id="chk" />
+            <label for="chk" class="show-btn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <ul class="menu">
+                <li><a href="#top">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#circle-container">Team</a></li>
+                <li><a href="#Technologies">Technologies</a></li>
+                <li><a href="#contact">contact</a></li>
 
-    <div id="banner">
-        <h1>PRACTICAL - 9</h1>
-    </div>
+                <label for="chk" class="hide-btn">
+                    <i class="fa fa-times"></i>
+                </label>
+            </ul>
+        </div>
+        <a name="top"></a>
 
-
-    <div id="team">
-        <h1>Team</h1>
-        <div id="avatars">
-            <div class="avatar" id="avatar1">
+        <div id="banner">
+            <h2>PRACTICAL - 9</h2>
+        </div>
+        
+        <div id="circle-container">
+            <h1>Team Members</h1>
+            <div class="circle">
                 <img src="../Images/avatar1.png" alt="avatar1" />
             </div>
-            <div class="avatar" id="avatar2">
+            <div class="circle">
                 <img src="../Images/avatar2.png" alt="avatar2" />
             </div>
-            <div class="avatar" id="avatar3">
+            <div class="circle">
                 <img src="../Images/avatar3.png" alt="avatar3" />
             </div>
-            <div class="avatar" id="avatar4">
+            <div class="circle">
                 <img src="../Images/avatar4.png" alt="avatar4" />
             </div>
         </div>
-    </div>
+        
+        <div id="sec2-container">
+            <a name="about"></a>
+            <h1>About Us</h1>
+            <div id="left-side">
+                <div class="left-content">
+                    <div id="left-p">
+                        <h2>About Projects</h2>
+                        <p>
+                            temporibus similique sit tenetur quasi exercitationem! Repellat
+                            obcaecati quibusdam iste explicabo laborum veritatis velit
+                            accusantium animi dolorum nemo ut quam, quo cum in suscipit
+                            fugiat minima corrupti voluptates tempora alias aspernatur esse
+                            dolore iure? Libero iste quo nam sequi nulla, minima architecto
+                            est cum expedita omnis enim culpa reiciendis nesciunt quod
+                            deserunt, nostrum corporis tempore impedit veritatis ut
+                            perspiciatis rerum. Amet, harum pariatur. Quo dolorum
+                            necessitatibus eos beatae eveniet, earum cum blanditiis,
+                            accusamus vitae, nisi voluptas dignissimos modi quibusdam aut
+                            veniam deserunt accusantium possimus atque? Distinctio voluptas
+                            nemo, fuga laboriosam perspiciatis eum debitis nesciunt quidem
+                            iure ratione! Eaque ea eum maxime temporibus dolor nostrum, iure
+                            enim, vero in atque quod animi! Mollitia alias magnam nisi
+                            suscipit ab ducimus dolores provident. Distinctio veritatis
+                            quaerat explicabo fuga neque culpa facere suscipit vel, totam
+                            quasi!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="right-side">
+                <div class="artical" id="p1">
+                    <h2>Project-1</h2>
+                </div>
+                <div class="artical" id="p2">
+                    <h2>Project-2</h2>
+                </div>
+                <div class="artical" id="p3">
+                    <h2>Project-3</h2>
+                </div>
+            </div>
+        </div>
 
-
-    <div id="about">
-        <h1>About Us</h1>
-        <div id="container">
-            <div id="about-project">
-                <h1>About Projects</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis excepturi veniam unde distinctio
-                    commodi impedit, dolore maiores iusto quae velit illo! Quas temporibus ipsa unde facilis, eius,
-                    similique quisquam qui quibusdam ut ratione soluta commodi vero saepe voluptas eaque velit
-                    consequatur aspernatur perferendis dolores reprehenderit atque quos consequuntur? Quos repudiandae
-                    modi necessitatibus, vitae dolorum excepturi minus illo omnis nam distinctio vel nisi soluta ad
-                    voluptatum optio laboriosam delectus saepe hic. Iure error accusantium aliquam blanditiis aspernatur
-                    natus doloremque in quo corrupti voluptatum eius repudiandae magni provident, esse saepe ipsam?
-                    Repellendus quisquam soluta perspiciatis, suscipit odit accusamus architecto quos rem perferendis.
+        <div id="grid-container">
+            <a name="Technologies"></a>
+            <h1>Technologies Used</h1>
+            <div class="grid">
+                <img src="./Assignment-5/MongoDB.jpg" alt="Mongo-DB" />
+                <h4>Introduction to Mongo-DB</h4>
+                <p>
+                    MongoDB is a source-available cross-platform document-oriented database program. Classified as a
+                    NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
                 </p>
+                <a href="./Assignment-5/Mongo.html" target="_blank">Read More</a>
             </div>
-
-            <div class="projects">
-                <div class="project" id="project1">
-                    <h1>Project - 1</h1>
-                </div>
-                <div class="project" id="project2">
-                    <h1>Project - 2</h1>
-                </div>
-                <div class="project" id="project3">
-                    <h1>Project - 3</h1>
-                </div>
+            <div class="grid">
+                <img src="./Assignment-5/Express.png" alt="Express JS" />
+                <h4>Introduction to Express JS</h4>
+                <p>
+                    Express. js makes it easier to manage web applications.It is a part of a javascript based technology
+                    called MEAN software stack which stands for MongoDB, ExpressJS, AngularJS, and Node.
+                </p>
+                <a href="./Assignment-5/Express.html" target="_blank">Read More</a>
             </div>
-        </div>
-    </div>
-
-
-    <div id="technologies">
-        <h1>Technologies Used</h1>
-        <div class="box-container">
-            <div class="box">
-                <div class="image-box">
-                    <img src="./Assignment-5/MongoDB.jpg" alt="Mongo-DB" />
-                </div>
-                <div class="heading">
-                    <h3>Introduction to Mongo-DB</h3>
-                </div>
-                <p>MongoDB is a source-available cross-platform document-oriented database program. Classified as a
-                    NoSQL database program, MongoDB uses JSON-like documents with optional schemas.</p>
-                <div class="button">
-                    <a href="./Assignment-5/Mongo.html" target="_blank">Read More</a>
-                </div>
+            <div class="grid">
+                <img src="./Assignment-5/react.jpg" alt="React JS" />
+                <h4>Introduction to React JS</h4>
+                <p>
+                    React is a free and open-source front-end JavaScript library for building user interfaces or UI
+                    components. It is maintained by Facebook and a community of individual developers and companies.
+                </p>
+                <a href="./Assignment-5/React.html" target="_blank">Read More</a>
             </div>
-
-            <div class="box">
-                <div class="image-box">
-                    <img src="./Assignment-5/Express.png" alt="Express JS" />
-                </div>
-                <h3>Introduction to Express JS</h3>
-                <p>Express.js, or simply Express, is a back end web application framework for Node.js, released as
-                    free and open-source software under the MIT License.</p>
-                <div class="button">
-                    <a href="./Assignment-5/Express.html" target="_blank">Read More</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image-box">
-                    <img src="./Assignment-5/react.jpg" alt="React JS" />
-                </div>
-                <h3>Introduction to React JS</h3>
-                <p>React is a free and open-source front-end JavaScript library for building user interfaces or UI
-                    components. It is maintained by Facebook and a community of individual developers and companies.</p>
-                <div class="button">
-                    <a href="./Assignment-5/React.html" target="_blank">Read More</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image-box">
-                    <img src="./Assignment-5/Node js.jpeg" alt="Node JS" />
-                </div>
-                <h3>Introduction to Node JS</h3>
-                <p>Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on
-                    the V8 engine and executes JavaScript code outside a web browser. </p>
-                <div class="button">
-                    <a href="./Assignment-5/NodeJS.html" target="_blank">Read More</a>
-                </div>
+            <div class="grid">
+                <img src="./Assignment-5/Node js.jpeg" alt="Node JS" />
+                <h4>Introduction to Node JS</h4>
+                <p>
+                    Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on
+                    the V8 engine and executes JavaScript code outside a web browser.
+                </p>
+                <a href="./Assignment-5/NodeJS.html" target="_blank">Read More</a>
             </div>
         </div>
-    </div>
 
-
-    <div id="contact">
+        <a name="contact"></a>
         <h1>Contact</h1>
+        <div id="footer">
+            <p>
+                Website Template for Practical-9 &copy;
+                <a href="https://github.com/nikhil-gaur457" target="_blank">Nikhil Gaur</a><br /><br />
+                <a href="#top">Back to top</a>
+            </p>
+        </div>
     </div>
-    <div id="footer">
-        <p>Website template for practical - 8 &#169;
-            <a href="https://github.com/nikhil-gaur457" target="_blank">Nikhil Gaur</a>
-        </p>
-        <p><a href="#">Back to top</a></p>
-    </div>
-
 </body>
 
 </html>
