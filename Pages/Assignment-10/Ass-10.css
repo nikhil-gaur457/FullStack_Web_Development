@@ -1,91 +1,150 @@
 * {
-    padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .header {
     width: 100%;
-    height: 70px;
-    background-color: #353b48;
+    height: 60px;
+    background-color: #11324d;
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .header img {
-    width: 70px;
-    height: 70px;
-    margin-right: 15px;
+    width: 56px;
+    height: 56px;
+    margin-right: 10px;
 }
 
-.header h1 {
-    line-height: 70px;
+.header h2 {
     color: white;
+    line-height: 60px;
+    text-align: center;
 }
 
-.content {
+.main-content {
+    float: right;
     width: 100%;
-    padding: 20px;
+    transition: 0.5s;
 }
 
-.content img {
+.main-content img {
     width: 100%;
-    max-width: 700px;
+    max-width: 650px;
     display: block;
-    margin: auto;
+    margin: 10px auto;
 }
 
-.content p {
+.main-content p {
     text-align: justify;
+    margin: 20px;
 }
 
-.sidebar {
-    width: 20%;
+.side-bar {
+    width: 25%;
     height: 100%;
+    background-color: #112031;
     position: fixed;
-    top: 70px;
-    background-color: #353b48;
+    top: 0;
+    left: -100%;
+    margin-top: 60px;
+    transition: 0.5s;
 }
 
-.sidebar ul {
+.side-bar ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.sidebar ul li {
-    border-bottom: 2px solid rgba(255, 255, 255, .1);
+.side-bar ul li {
+    color: white;
+    margin: 10px;
 }
 
-.sidebar ul li a {
+.side-bar ul li a {
     display: block;
+    color: white;
     text-decoration: none;
+    padding: 15px;
+    border: 2px solid white;
+    border-radius: 12px;
+}
+
+.side-bar ul li a:hover {
+    color: black;
+    background-color: white;
+}
+
+.side-bar ul li a i {
+    margin-right: 10px;
+}
+
+.show-btn,
+.hide-btn {
+    position: fixed;
     color: white;
-    font-size: 20px;
-    padding: 15px 25px;
-    transition: 0.4s;
+    font-size: 25px;
+    top: 15px;
+    left: 30px;
 }
 
-a i {
-    margin-right: 15px;
+.hide-btn {
+    visibility: hidden;
 }
 
-.sidebar ul li a:hover {
-    border-left: 10px solid white;
+#check {
+    visibility: hidden;
 }
 
-i {
-    font-size: 30px;
-    color: white;
+#check:checked~.side-bar {
+    left: 0;
+}
+
+#check:checked~.show-btn {
+    visibility: hidden;
+}
+
+#check:checked~.hide-btn {
+    visibility: visible;
+}
+
+#check:checked~.main-content {
+    width: 75%;
 }
 
 .social {
-    margin-top: 200px;
+    position: relative;
+    margin-top: 285px;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    font-size: 30px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     border-top: 2px solid rgba(255, 255, 255, 0.1);
-    padding: 15px 25px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.social i {
+    font-size: 30px;
+    color: white;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.social i:hover {
+    color: black;
+    background-color: white;
+}
+
+@media screen and (max-width: 730px) {
+    .side-bar {
+        width: 100%;
+    }
+    .header h2 {
+        display: none;
+    }
 }
