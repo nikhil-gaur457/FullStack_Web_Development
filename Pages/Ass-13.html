@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical-13</title>
+    <script src="https://kit.fontawesome.com/4d63232f4c.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(191, 224, 240);
+        }
+        
+        table {
+            background-color: white;
+            padding: 5px;
+            width: 60%;
+        }
+        
+        caption {
+            background-color: white;
+        }
+        
+        .main-table-head {
+            padding: 15px;
+        }
+        
+        tr:nth-child(even),
+        thead {
+            background: linear-gradient(90deg, skyblue, rgb(247, 178, 247));
+        }
+        
+        button {
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px 5px 10px;
+            color: white;
+            background-color: blueviolet;
+        }
+        
+        button:hover {
+            cursor: pointer;
+            background-color: orangered;
+        }
+        
+        td {
+            text-align: center;
+            padding: 15px 30px;
+        }
+        
+        caption {
+            padding-top: 12px;
+            color: purple;
+            font-size: larger;
+        }
+        
+        .fa-check {
+            color: rgb(0, 199, 0);
+        }
+        
+        .fa-times {
+            color: rgb(255, 41, 41);
+        }
+        
+        .icon {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>
+            Select Your Plan
+        </caption>
+        <thead>
+            <tr>
+                <th class="main-table-head">
+                    <i class="icon fas fa-building"></i> Basic
+                </th>
+                <th class="main-table-head">
+                    <i class="icon fab fa-unsplash"></i> Plus
+                </th>
+                <th class="main-table-head">
+                    <i class="icon fab fa-mendeley"></i> Deluxe
+                </th>
+                <th class="main-table-head"><i class="icon fas fa-gem"></i> Pro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Rs.500/-</td>
+                <td>Rs.1500/-</td>
+                <td>Rs.2500/-</td>
+                <td>Rs.3500/-</td>
+            </tr>
+            <tr>
+                <td>50 Pages</td>
+                <td>75 Pages</td>
+                <td>Unlimited</td>
+                <td>Unlimited</td>
+            </tr>
+            <tr>
+                <td>3 users</td>
+                <td>5 users</td>
+                <td>10 users</td>
+                <td>Unilimited</td>
+            </tr>
+            <tr>
+                <td>10 Sites</td>
+                <td>25 Sites</td>
+                <td>100 Sites</td>
+                <td>Unlimited</td>
+            </tr>
+            <tr>
+                <td>50 MB</td>
+                <td>250 MB</td>
+                <td>1 GB</td>
+                <td>5 GB</td>
+            </tr>
+            <tr>
+                <td>included</td>
+                <td>included</td>
+                <td>included</td>
+                <td>included</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+                <td><button>Sign Up</button></td>
+                <td><button>Sign Up</button></td>
+                <td><button>Sign Up</button></td>
+                <td><button>Sign Up</button></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
