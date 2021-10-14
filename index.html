@@ -8,6 +8,75 @@
     <title>Assignment - 4</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <style>
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            width: 120px;
+            height: 120px;
+            margin: -76px 0 0 -76px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            -webkit-animation: spin .5s linear infinite;
+            animation: spin .8s linear infinite;
+        }
+        
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        /* Add animation to "page content" */
+        
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 1s
+        }
+        
+        @-webkit-keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+            to {
+                bottom: 0px;
+                opacity: 1
+            }
+        }
+        
+        @keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+        
+        #myDiv {
+            display: none;
+            text-align: center;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -146,182 +215,198 @@
     </style>
 </head>
 
-<body>
-    <h1 class="top-heading">Welcome to live practical book</h1>
-    <p class="top-para">This is a live practical book for the subject Fullstack Development. In this book we are performing all the practicals related to front-end web development.</p>
-    <table>
-        <thead>
-            <tr>
-                <th colspan="5">Fullstack Live Practical Book</th>
-            </tr>
-            <tr>
-                <th>#</th>
-                <th>Practical Name</th>
-                <th>Link</th>
-                <th>Status</th>
-                <th>Tools</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Create a Web Page including HTML basic skeleton using Offline editor and online sandbox environment.
-                </td>
-                <td class="source">
-                    <a href="./Pages/Ass-1.html">Practical-1</a>
-                </td>
-                <td class="source">Checked</td>
-                <td>
-                    <i title="Edit" class="material-icons button edit">edit</i>
-                    <i title="Delete" class="material-icons button delete">delete</i>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Create a Web Page showing a basic HTML structure Character Entities and Span tag.</td>
-                <td class="source">
-                    <a href="./Pages/Ass-2.html">Practical-2</a>
-                </td>
-                <td class="source">Checked</td>
-                <td>
-                    <i title="Edit" class="material-icons button edit">edit</i>
-                    <i title="Delete" class="material-icons button delete">delete</i>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Live Your first Web Page on Github</td>
-                <td class="source">
-                    <a href="./Pages/Ass-3.html">Practical-3</a>
-                </td>
-                <td class="source">Checked</td>
-                <td>
-                    <i title="Edit" class="material-icons button edit">edit</i>
-                    <i title="Delete" class="material-icons button delete">delete</i>
-                </td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Create a Website having list all practicals and their individual practical page links.</td>
-                <td class="source">
-                    <a href="./Pages/Ass-4.html">Practical-4</a>
-                </td>
-                <td class="source">Checked</td>
-                <td>
-                    <i title="Edit" class="material-icons button edit">edit</i>
-                    <i title="Delete" class="material-icons button delete">delete</i>
-                </td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Create a Web-Page showing the use of Image-Map in the Web Application.</td>
-                <td class="source">
-                    <a href="./Pages/Ass-5.html">Practical-5</a>
-                </td>
-                <td class="source">Checked</td>
-                <td>
-                    <i title="Edit" class="material-icons button edit">edit</i>
-                    <i title="Delete" class="material-icons button delete">delete</i>
-                </td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Create a Web-Page showing cards layout using css properties.</td>
-                <td class="source">
-                    <a href="./Pages/Ass-6.html">Practical-6</a>
-                </td>
-                <td class="source">Checked</td>
-                <td>
-                    <i title="Edit" class="material-icons button edit">edit</i>
-                    <i title="Delete" class="material-icons button delete">delete</i>
-                </td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Create a Web Page Layout using div tags.</td>
-                <td class="source">
-                    <a href="./Pages/Ass-7.html">Practical-7</a>
-                </td>
-                <td class="source">Checked</td>
-                <td>
-                    <i title="Edit" class="material-icons button edit">edit</i>
-                    <i title="Delete" class="material-icons button delete">delete</i>
-                </td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Create a Web Page having Fixed Navigation Bar with the given content.</td>
-                <td class="source">
-                    <a href="./Pages/Ass-8.html">Practical-8</a>
-                </td>
-                <td class="source">Checked</td>
-                <td>
-                    <i title="Edit" class="material-icons button edit">edit</i>
-                    <i title="Delete" class="material-icons button delete">delete</i>
-                </td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>Create a Responsive Web Layout with Responsive Navigation Bar.</td>
-                <td class="source">
-                    <a href="./Pages/Ass-9.html">Practical-9</a>
-                </td>
-                <td class="source">Checked</td>
-                <td>
-                    <i title="Edit" class="material-icons button edit">edit</i>
-                    <i title="Delete" class="material-icons button delete">delete</i>
-                </td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>Create a responsive Side-bar Navigation menu as per the layout.</td>
-                <td class="source">
-                    <a href="./Pages/Assignment-10/Ass-10.html">Practical-10</a>
-                </td>
-                <td class="source">Checked</td>
-                <td>
-                    <i title="Edit" class="material-icons button edit">edit</i>
-                    <i title="Delete" class="material-icons button delete">delete</i>
-                </td>
-            </tr>
-            <tr>
-                <td>11</td>
-                <td>Create a Responsive Footer Template.</td>
-                <td class="source">
-                    <a href="./Pages/Assignment-11/Ass-11.html">Practical-11</a>
-                </td>
-                <td style="color: red;">Un-Checked</td>
-                <td>
-                    <i title="Edit" class="material-icons button edit">edit</i>
-                    <i title="Delete" class="material-icons button delete">delete</i>
-                </td>
-            </tr>
-            <tr>
-                <td>12</td>
-                <td>create a table and add records of practicals </td>
-                <td class="source">
-                    <a href="./Pages/Ass-12.html">Practical-12</a>
-                </td>
-                <td style="color: red;">Un-Checked</td>
-                <td>
-                    <i title="Edit" class="material-icons button edit">edit</i>
-                    <i title="Delete" class="material-icons button delete">delete</i>
-                </td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>create a custom table.</td>
-                <td class="source">
-                    <a href="./Pages/Ass-13.html">Practical-13</a>
-                </td>
-                <td style="color: red;">Un-Checked</td>
-                <td>
-                    <i title="Edit" class="material-icons button edit">edit</i>
-                    <i title="Delete" class="material-icons button delete">delete</i>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<body onload="myFunction()" style="margin:0;">
+
+    <div id="loader"></div>
+
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+        <h1 class="top-heading">Welcome to live practical book</h1>
+        <p class="top-para">This is a live practical book for the subject Fullstack Development. In this book we are performing all the practicals related to front-end web development.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="5">Fullstack Live Practical Book</th>
+                </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Practical Name</th>
+                    <th>Link</th>
+                    <th>Status</th>
+                    <th>Tools</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Create a Web Page including HTML basic skeleton using Offline editor and online sandbox environment.
+                    </td>
+                    <td class="source">
+                        <a href="./Pages/Ass-1.html">Practical-1</a>
+                    </td>
+                    <td class="source">Checked</td>
+                    <td>
+                        <i title="Edit" class="material-icons button edit">edit</i>
+                        <i title="Delete" class="material-icons button delete">delete</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Create a Web Page showing a basic HTML structure Character Entities and Span tag.</td>
+                    <td class="source">
+                        <a href="./Pages/Ass-2.html">Practical-2</a>
+                    </td>
+                    <td class="source">Checked</td>
+                    <td>
+                        <i title="Edit" class="material-icons button edit">edit</i>
+                        <i title="Delete" class="material-icons button delete">delete</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Live Your first Web Page on Github</td>
+                    <td class="source">
+                        <a href="./Pages/Ass-3.html">Practical-3</a>
+                    </td>
+                    <td class="source">Checked</td>
+                    <td>
+                        <i title="Edit" class="material-icons button edit">edit</i>
+                        <i title="Delete" class="material-icons button delete">delete</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Create a Website having list all practicals and their individual practical page links.</td>
+                    <td class="source">
+                        <a href="./Pages/Ass-4.html">Practical-4</a>
+                    </td>
+                    <td class="source">Checked</td>
+                    <td>
+                        <i title="Edit" class="material-icons button edit">edit</i>
+                        <i title="Delete" class="material-icons button delete">delete</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Create a Web-Page showing the use of Image-Map in the Web Application.</td>
+                    <td class="source">
+                        <a href="./Pages/Ass-5.html">Practical-5</a>
+                    </td>
+                    <td class="source">Checked</td>
+                    <td>
+                        <i title="Edit" class="material-icons button edit">edit</i>
+                        <i title="Delete" class="material-icons button delete">delete</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Create a Web-Page showing cards layout using css properties.</td>
+                    <td class="source">
+                        <a href="./Pages/Ass-6.html">Practical-6</a>
+                    </td>
+                    <td class="source">Checked</td>
+                    <td>
+                        <i title="Edit" class="material-icons button edit">edit</i>
+                        <i title="Delete" class="material-icons button delete">delete</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Create a Web Page Layout using div tags.</td>
+                    <td class="source">
+                        <a href="./Pages/Ass-7.html">Practical-7</a>
+                    </td>
+                    <td class="source">Checked</td>
+                    <td>
+                        <i title="Edit" class="material-icons button edit">edit</i>
+                        <i title="Delete" class="material-icons button delete">delete</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Create a Web Page having Fixed Navigation Bar with the given content.</td>
+                    <td class="source">
+                        <a href="./Pages/Ass-8.html">Practical-8</a>
+                    </td>
+                    <td class="source">Checked</td>
+                    <td>
+                        <i title="Edit" class="material-icons button edit">edit</i>
+                        <i title="Delete" class="material-icons button delete">delete</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Create a Responsive Web Layout with Responsive Navigation Bar.</td>
+                    <td class="source">
+                        <a href="./Pages/Ass-9.html">Practical-9</a>
+                    </td>
+                    <td class="source">Checked</td>
+                    <td>
+                        <i title="Edit" class="material-icons button edit">edit</i>
+                        <i title="Delete" class="material-icons button delete">delete</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Create a responsive Side-bar Navigation menu as per the layout.</td>
+                    <td class="source">
+                        <a href="./Pages/Assignment-10/Ass-10.html">Practical-10</a>
+                    </td>
+                    <td class="source">Checked</td>
+                    <td>
+                        <i title="Edit" class="material-icons button edit">edit</i>
+                        <i title="Delete" class="material-icons button delete">delete</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Create a Responsive Footer Template.</td>
+                    <td class="source">
+                        <a href="./Pages/Assignment-11/Ass-11.html">Practical-11</a>
+                    </td>
+                    <td style="color: red;">Un-Checked</td>
+                    <td>
+                        <i title="Edit" class="material-icons button edit">edit</i>
+                        <i title="Delete" class="material-icons button delete">delete</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>create a table and add records of practicals </td>
+                    <td class="source">
+                        <a href="./Pages/Ass-12.html">Practical-12</a>
+                    </td>
+                    <td style="color: red;">Un-Checked</td>
+                    <td>
+                        <i title="Edit" class="material-icons button edit">edit</i>
+                        <i title="Delete" class="material-icons button delete">delete</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>create a custom table.</td>
+                    <td class="source">
+                        <a href="./Pages/Ass-13.html">Practical-13</a>
+                    </td>
+                    <td style="color: red;">Un-Checked</td>
+                    <td>
+                        <i title="Edit" class="material-icons button edit">edit</i>
+                        <i title="Delete" class="material-icons button delete">delete</i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            var myVar;
+
+            function myFunction() {
+                myVar = setTimeout(showPage, 3000);
+            }
+
+            function showPage() {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("myDiv").style.display = "block";
+            }
+        </script>
 </body>
 
 </html>
