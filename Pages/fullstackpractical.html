@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FullStack Practical</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-image: url(\Images\mario-gogh-VBLHICVh-lI-unsplash.jpg);
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        #container {
+            width: 100vw;
+            height: 100vh;
+            margin: auto;
+        }
+        
+        #header {
+            width: 100%;
+            height: 90px;
+            position: fixed;
+            top: 0;
+            height: 90px;
+            border-bottom: 1px solid rgb(100, 98, 98);
+        }
+        
+        #header h1 {
+            font-size: 40px;
+            color: white;
+            float: left;
+            padding: 20px;
+            margin-left: 50px;
+        }
+        
+        .menu {
+            list-style: none;
+            float: right;
+            padding: 20px;
+            margin-right: 50px;
+        }
+        
+        .menu li {
+            display: inline-block;
+            line-height: 70px;
+        }
+        
+        .menu li a {
+            transition: 0.4s;
+            display: block;
+            font-size: 20px;
+            text-decoration: none;
+            color: rgb(184, 178, 178);
+            padding: 0px 20px;
+            text-transform: uppercase;
+        }
+        
+        .menu li a:hover {
+            color: rgb(248, 248, 248);
+            font-size: 22px;
+        }
+        
+        #banner {
+            margin-top: 300px;
+            text-align: center;
+            color: white;
+            font-size: 70px;
+        }
+        
+        #banner h2 {
+            margin-top: 30px;
+            text-align: center;
+            color: white;
+            font-size: 60px;
+        }
+        
+        #banner p {
+            font-size: 30px;
+            text-align: center;
+            line-height: 28px;
+            color: white;
+            margin-top: 15px;
+        }
+        
+        #banner button {
+            background-color: turquoise;
+            color: white;
+            padding: 10px 20px;
+            margin: auto;
+            margin-top: 50px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .Bluedot {
+            height: 20px;
+            width: 20px;
+            background-color: turquoise;
+            border-radius: 50%;
+            display: inline-block;
+            margin-top: 70px;
+        }
+        
+        .Simpledot {
+            height: 20px;
+            width: 20px;
+            background-color: silver;
+            border-radius: 50%;
+            display: inline-block;
+            margin-top: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="header">
+            <h1>WAREHOUSE</h1>
+            <ul class="menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">PROPERTIES</li>
+                <li><a href="#">AGENTS</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </div>
+
+        <div id="banner">
+            <h2>BUY & SELL PROPERTIES HERE</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Voluptate repudiandae unde deleniti repellendus, magni necessitatibus minus adipisci accusantium perferendis cum!</p>
+            <button>Get Started</button>
+            <span class="Bluedot"></span>
+            <span class="Simpledot"></span>
+        </div>
+    </div>
+</body>
+
+</html>
