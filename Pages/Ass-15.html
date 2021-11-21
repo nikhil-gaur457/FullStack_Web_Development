@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <title>Practical-15</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: darkslateblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 320px;
+            min-width: 320px;
+        }
+        
+        .container>h2 {
+            background-color: rgb(245, 245, 245);
+            padding: 16px;
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: 600;
+        }
+        
+        .container form {
+            padding: 32px 24px 16px;
+        }
+        
+        .container form .form-control {
+            position: relative;
+            margin-bottom: 4px;
+        }
+        
+        .container form label {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container form label input {
+            border: 2px solid #aaa;
+            border-radius: 4px;
+            margin-top: 4px;
+            padding: 4px 24px 4px 4px;
+            outline: none;
+            width: 100%;
+        }
+        
+        .container form i {
+            position: absolute;
+            right: 8px;
+            top: 33px;
+            visibility: hidden;
+        }
+        
+        .container form small {
+            font-size: smaller;
+            color: red;
+            visibility: hidden;
+        }
+        
+        .container form button {
+            background-color: darkslateblue;
+            border-radius: 3px;
+            color: white;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            padding: 4px;
+            margin: 16px 0px;
+            width: 100%;
+        }
+        
+        form .form-control.sucess i.check {
+            color: rgb(48, 207, 48);
+            visibility: visible;
+        }
+        
+        form .form-control.sucess input {
+            border-color: rgb(48, 207, 48);
+        }
+        
+        form .form-control.error i.exclamation {
+            color: red;
+            visibility: visible;
+        }
+        
+        form .form-control.error input {
+            border-color: red;
+        }
+        
+        form .form-control.error small {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>create account</h2>
+        <form>
+            <div class="form-control">
+                <label title="only lower case alphabate">Username<input type="text" name="userName"
+                        placeholder="Enter User Name" id='username'><label>
+                        <i class="fa fa-check-circle check"></i>
+                        <i class="fa fa-exclamation-circle exclamation"></i>
+                        <small>Lorem ipsum dolor sit amet.</small>
+            </div>
+            <div class="form-control">
+                <label title="must have '@' followed by ''.com'">Email<input type="text" name="email"
+                        placeholder="Enter Email" id='email'></label>
+                <i class="fa fa-check-circle check"></i>
+                <i class="fa fa-exclamation-circle exclamation"></i>
+                <small>Lorem ipsum dolor sit amet.</small>
+            </div>
+            <div class="form-control">
+                <label title="all string are accepted except blank">Password<input type="password" name="password"
+                        placeholder="Enter Password" id=password1></label>
+                <i class="fa fa-check-circle check"></i>
+                <i class="fa fa-exclamation-circle exclamation"></i>
+                <small>Lorem ipsum dolor sit amet.</small>
+            </div>
+            <div class="form-control">
+                <label>Confirm Password<input type="password" name="confirm-password"
+                        placeholder="Confirm Your Password" id='password2'></label>
+                <i class="fa fa-check-circle check"></i>
+                <i class="fa fa-exclamation-circle exclamation"></i>
+                <small>Lorem ipsum dolor sit amet.</small>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        const form = document.getElementsByTagName('form');
+        const userName = document.getElementById('username');
+        const email = document.getElementById('email');
+        const password1 = document.getElementById('password1');
+        const password2 = document.getElementById('password2');
+        const msg_arr = document.querySelectorAll("form .form-control small");
+
+        //event handller
+        document.addEventListener('submit', function(e) {
+            e.preventDefault();
+            //while changing the name attribute you should also change the value in isvalidate function.
+            check(userName, "Username", 0);
+            check(email, "Email-id", 1);
+            if (checkBlank(password1, "Password", 2)) {
+                addSucess(password1.parentNode.parentNode)
+            }
+            if (checkBlank(password2, "Confirm Password", 3)) {
+                if (password1.value == password2.value) {
+                    addSucess(password2.parentNode.parentNode);
+                } else {
+                    addError(password2.parentNode.parentNode, msg_arr[3], "Password is not matched");
+                }
+            }
+        });
+
+        //functions
+        function check(node, name, i) {
+            if (checkBlank(node, name, i)) {
+                if (!isvalidate(node.value, name)) {
+                    addError(node.parentNode.parentNode, msg_arr[i], name + " is not valid");
+                } else {
+                    addSucess(node.parentNode.parentNode);
+                }
+            }
+        }
+
+        function checkBlank(node, name, i) {
+            if (node.value == '') {
+                addError(node.parentNode.parentNode, msg_arr[i], name + " can not be black");
+                return false;
+            }
+            return true;
+        }
+
+        function addError(node1, node2, msg) {
+            node1.classList.remove('sucess');
+            node1.classList.add('error');
+            node2.innerHTML = msg;
+        }
+
+        function addSucess(node) {
+            node.classList.remove('error');
+            node.classList.add('sucess');
+        }
+
+        function isvalidate(value, type) {
+            if (type == 'Username') {
+                return /^([a-z0-9]+$)/.test(value);
+            }
+            if (type == 'Email-id') {
+                return /^([a-zA-Z0-9\.\_\-]+)@([a-zA-z0-9]+)\.([a-zA-z]{3})$/.test(value);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
